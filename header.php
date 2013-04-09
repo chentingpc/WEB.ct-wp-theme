@@ -95,10 +95,7 @@ else:
 	$rss_title = 'Subscribe this page/url.';
 endif;
 ?>
-<!--div id="right_conner_text">
-	<span id="rss_feed"><a href="<?php echo $rss_link; ?>" title="<?php echo $rss_title?>">Rss</a></span>
-	<span id="contact"><a href="" title="About/Contact">Contact</a></span>
-</div-->
+
 <?php
 	global $my_ct_post_filter;
 	if ( $my_ct_post_filter->get_current_user_role() == 'not_login' ):

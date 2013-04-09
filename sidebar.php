@@ -6,7 +6,7 @@
  *
  */
  
-function ct_get_search_form($echo = true) {
+function ct_get_search_form($echo = true, $choice = 0) {
 	do_action( 'get_search_form' );
 
 	$search_form_template = locate_template('searchform.php');
@@ -14,13 +14,22 @@ function ct_get_search_form($echo = true) {
 		require($search_form_template);
 		return;
 	}
-
-	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	<div id="ss"><label class="screen-reader-text" for="s">' . __('Search') . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" />
-	</div>
-	</form>';
-
+	
+	if ( $choice == 0):
+		$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+		<div id="ss"><label class="screen-reader-text" for="s">' . __('Search') . '</label>
+		<input type="text" value="' . get_search_query() . '" name="s" id="s" />
+		</div>
+		</form>';
+	else:
+		$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+		<div id="ss">
+		<input type="text" value="' . get_search_query() . '" name="s" id="s" />
+		<input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
+		</div>
+		</form>';
+	endif;
+		
 	if ( $echo )
 		echo apply_filters('get_search_form', $form);
 	else
@@ -29,6 +38,7 @@ function ct_get_search_form($echo = true) {
 
 	global $content_ajax;
 	global $wp;
+	global $url_view;
 	global $quality;
 	global $quality_show;
 	global $quality_show_a;
@@ -80,9 +90,9 @@ function ct_get_search_form($echo = true) {
 		}
 		
 		$view_all = ''; //'whole';
-		$view_all_a = '<a class="link" title="Show in full text manner." href="' . $url_view . '">show full text</a>';
+		$view_all_a = '<a class="link" title="Show in full text way." href="' . $url_view . '">Show full text</a>';
 		$view_cat = ''; //'category';
-		$view_cat_a = '<a class="link" title="Show all posts in only title manner." href="' . $url_view . '">category view</a>';
+		$view_cat_a = '<a class="link" title="Show all posts in only title way." href="' . $url_view . '">Catalog View</a>';
 		$quality_show = array('1', '2', '3', '4', '5');
 		$quality_show_a = array('<a class="qnum" title="Quality filter: lower." href="' . $url_quality[1] . '">1</a>', 
 							'<a class="qnum" title="Quality filter: low." href="' . $url_quality[2] . '">2</a>', 

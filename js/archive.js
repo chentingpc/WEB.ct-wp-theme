@@ -90,8 +90,8 @@ function resize_top(){
 	$('#toTop').css('right', width);
 }
 
-$(document).ready(function () {
-
+$(document).ready(function () { 
+	
 	$(window).scroll(function(){
 		if ( $(window).scrollTop() + $(window).height() == $(document).height() 
 			&& $('#content').height() > $(window).height() ){

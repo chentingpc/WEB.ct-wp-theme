@@ -35,8 +35,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 body {
-	background: #fff;
-	line-height: 1;
+	margin: 0 auto;
 }
 
 table {/* tables still need 'cellspacing="0"' in the markup */
@@ -105,13 +104,12 @@ img.aligncenter {
 -------------------------------------------------------------- */
 
 body {
-	padding: 0;
-	font-family: Georgia, Verdana, '微软雅黑', "Bitstream Charter", serif;
 	line-height: 1.2em;
 }
 
 #page{
 	margin: 0 auto;
+	min-width: 1300px;
 }
 
 
@@ -194,7 +192,7 @@ body {
 	font-size: 13px;
 	border-bottom: 5px solid #FAA523;
 	background: #eee;
-	font-family: Helvetica,Verdana,Tahoma,'微软雅黑',Geneva,sans-serif; 
+	font-family: Helvetica,Verdana,Tahoma,"Microsoft YaHei",Geneva,sans-serif; 
 }
 
 #sidebar ul{
@@ -264,6 +262,7 @@ body {
 	padding: 0px 5px 0 5px;
 	border-radius: 10px;
 }
+
 #sidebar #categoryform .categories ul{
 	color: #aaa;
 }
@@ -305,6 +304,62 @@ body {
 	padding:0;
 	word-wrap: break-word; 
 	word-break: normal; 
+	font-family: 'Microsoft YaHei', sans-serif; 
+}
+
+#content .quality_filter{
+	margin: 1.2em auto;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#content .qnum{
+	background: #FAA523;
+	padding: 0px 5px 0 5px;
+	border-radius: 12px;
+}
+
+#content .quality_filter .qnum{
+	background: #FAA523;
+	padding: 0px 5px 0 5px;
+	border-radius: 12px;
+}
+
+#content #catview_button{
+	float: right;
+	width: 80px;
+	height: 22px;
+	margin-right: -90px;
+	padding: 2px 2px 0 2px;
+	display: block;
+	background: #333;
+	border-radius: 5px;	
+	font-size: 13px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+
+#content #allview_button{
+	float: right;
+	width: 80px;
+	height: 22px;
+	margin-right: -90px;
+	margin-top: -2.5em;
+	padding: 2px 2px 0 2px;
+	display: block;
+	background: #333;
+	border-radius: 5px;	
+	font-size: 13px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+
+#content a#allview_button:hover,
+#content a#catview_button:hover{
+	font-weight: bold;
+	background: #111;
 }
 
 #content .entry-title{
@@ -389,7 +444,7 @@ body {
 	border-top: 1px solid #ccc;
 	color: #ccc;
 	font-size: 13px;
-	font-family: Consolas, Georgia, Verdana, '微软雅黑', "Bitstream Charter", serif;
+	font-family: Consolas, Georgia, Verdana,"Microsoft YaHei", "Bitstream Charter", sans-serif;
 	line-height: 1em;
 }
 

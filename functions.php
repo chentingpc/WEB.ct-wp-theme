@@ -43,7 +43,7 @@ define('WHITE_BLACK_REWRITE', true);
 // determine whether the request is through ajax
 $content_ajax = false;
 // category view year counter
-$year_counter_cat = '0';
+$date_counter_cat = '0';
 
 /**
 *	ct_post_filter class
@@ -414,6 +414,22 @@ function get_nothing_found() {
 	if ( $content_ajax == true ):
 		return ;
 	endif;
+	
+	
+	global $quality_show;
+	global $quality_show_a;
+	
+	for ($i = 1; $i <= 5; $i ++ ) {
+	if ( $i == $quality )
+		$quality_show_final .= $quality_show[$i-1] . ' ';
+	else
+		$quality_show_final .= $quality_show_a[$i-1] . ' ';
+	}
+	
+	$quality_show_final = '<div class="quality_filter">Quality Filter &nbsp;&nbsp;' . $quality_show_final . '</div>';
+	
+	echo $quality_show_final;
+	
 ?>
 	<article id="post-0" class="post no-results not-found">
 		<header class="entry-header">
@@ -421,22 +437,10 @@ function get_nothing_found() {
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found for the requested archive.', 'ct' ); ?></p>
-			<p>
-			<?php
-				_e('You may lower the quality filter: <br/>');
-				for ($i = 1; $i <= 5; $i ++ ) {
-					if ( $i == $quality )
-						echo $quality_show[$i-1] . ' ';
-					else
-						echo $quality_show_a[$i-1] . ' ';
-				}
-			?></p>
-			<?php get_search_form(); ?>
+			<p><?php _e( 'Apologies, but no results were found for the requested archive <b>at this level of quality</b>.', 'ct' ); ?></p>
+			<?php ct_get_search_form(true, 1); ?>
 		</div><!-- .entry-content -->
 	</article><!-- #post-0 -->
 <?php
-}
-
-
+}	
 ?>
