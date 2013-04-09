@@ -2,18 +2,6 @@
 /**
 * ct functions and definitions
 *
-* To setup this theme:
-* First, you need to hack the kernel file (wp-blog-header.php) of WP first, change:
-	wp();
-* to
-	$url_array = explode('?', $_SERVER['REQUEST_URI']);
-	if ( isset($_GET['s']) and ! isset($_GET['view']) ):
-		$url_array[1] .= '&view=cat';
-		$_SERVER['REQUEST_URI'] .= '&view=cat';
-	endif;
-	wp($url_array[1]);
-* Second, you active the theme like a normal theme.
-*
 * @package ct
 * @since ct 0.0
 */
