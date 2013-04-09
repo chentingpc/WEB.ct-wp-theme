@@ -1,4 +1,4 @@
-This is the Wordpress theme designed by me, for demo you can see http://tingchen.info. Note: The theme is not mature at this moment!
+This is the Wordpress theme designed by me, for demo you can see http://tingchen.info. Note: The theme is not perfectly mature upto this moment, I put it here to make it easy for code control.
 
 To setup this theme:
 * First, you need to hack the kernel file (wp-blog-header.php) of WP first, change:
@@ -11,3 +11,11 @@ To setup this theme:
 	endif;
 	wp($url_array[1]);
 * Second, you active the theme like a normal theme.
+
+Some of theme features:
+* Very simple and clear UI and information display.
+* Posts quality control and filter (also RSS enabled).
+* Catalog view.
+* Auto scrolling (such as twitter).
+* Protected posts hided.
+* ......
