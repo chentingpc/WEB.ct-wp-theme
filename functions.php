@@ -171,6 +171,9 @@ class ct_post_filter{
 				$where .= " AND (white_black = " . $white_black . ") ";
 		}
 		
+		if ( HIDE_PROTECTED == true )
+			$where .= " AND post_password = ''";
+		
 		return $where;
 	}
 	
@@ -315,23 +318,25 @@ class ct_post_filter{
 	
 	/**
 	*	post filter for in the front end (the query is been done), for the main pages (home.php, archive.php, search.php, single.php, etc)	
+	*	[!!!] Note: Rss are not been directly filter by this, if you want to filter it, you need to locate them in feed-rss.php and feed-rss2.php.
 	*/
 	
 	function front_post_fileter_main() {
 		global $post;
-		if ( HIDE_PROTECTED == true and $post->post_password != '' and !is_admin() and !is_single() and !is_page() and 'administrator' != $this->get_current_user_role() )
-			return true;
-		return false;
+		if ( HIDE_PROTECTED == false or $post->post_password == '' or is_admin() or is_single() or is_page() or 'administrator' == $this->get_current_user_role() )
+			return false;
+		return true;
 	}
 	
 	/**
 	*	post filter for in the front end (the query is been done), for the sidebar latest display
+	*	[!!!] Note: Rss are not been directly filter by this, if you want to filter it, you need to locate them in feed-rss.php and feed-rss2.php.
 	*/
 	
 	function front_post_fileter_latest( $post ) {
-		if ( HIDE_PROTECTED == true and $post['post_password'] != '' and 'administrator' != $this->get_current_user_role() )
-			return true;
-		return false;
+		if ( HIDE_PROTECTED == false or $post['post_password'] == '' or 'administrator' == $this->get_current_user_role() )
+			return false;
+		return true;
 	}
 };
 
