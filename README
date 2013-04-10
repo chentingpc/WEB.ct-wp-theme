@@ -11,6 +11,7 @@ To setup this theme:
 	endif;
 	wp($url_array[1]);
 * Second, you active the theme like a normal theme.
+* Additionally, you may also need to remove the website statistics javascript code from the footer.php.
 
 Some of theme features:
 * Very simple and clear UI and information display.

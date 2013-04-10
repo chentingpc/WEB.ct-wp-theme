@@ -185,7 +185,7 @@ body {
 **********************************************/
 
 #sidebar {
-	float: left;
+	position: absolute;
 	width: 260px;
 	margin-top: -1.5em;
 	margin-left: -310px;
