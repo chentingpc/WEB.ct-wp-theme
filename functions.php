@@ -307,7 +307,7 @@ class ct_post_filter{
 	*/
 	
 	function white_black_rules( $rules ) {
-		foreach ( $ruels as $key => $value ) {
+		foreach ( $rules as $key => $value ) {
 			$rules['white/' . $key] = $value . '&white_black=1';
 			$rules['black/' . $key] = $value . '&white_black=2';
 		}
